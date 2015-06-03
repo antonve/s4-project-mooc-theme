@@ -5,21 +5,20 @@ header.global, header.global-new, header.global.slim {
 
     padding: 0;
     border: 0 none;
-    background-color: @color-primary;
+    background-color: @color-background;
     margin-bottom: 0;
     transition: all .2s ease-in;
     box-shadow: none;
     border-radius: 0 !important;
 
     &:hover {
-        background-color: fadeout(@color-primary, 20%);
     }
 
     > nav {
         .ionisx-container();
 
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: 35px;
+        padding-bottom: 35px;
 
         h1.logo {
             margin: 0 30px 0 0;
@@ -31,7 +30,7 @@ header.global, header.global-new, header.global.slim {
             }
 
             a {
-                .size(@logo-img-width, 36px);
+                .size(@logo-img-width, 60px);
                 .text-hide();
 
                 background-image: url(@logo-img-path);
