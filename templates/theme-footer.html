@@ -1,42 +1,64 @@
 ## mako
-<%! from django.utils.translation import ugettext as _ %>
-<%! from microsite_configuration.templatetags.microsite import platform_name %>
+<%! from django.utils.translation import ugettext as _ 
+from microsite_configuration.templatetags.microsite import platform_name 
+import branding
+%>
 <%namespace name='static' file='static_content.html'/>
 
 <footer>
   <div class="footer-container">
-    <ul class="links">
-      %if settings.MKTG_URL_LINK_MAP.get('ABOUT'):
-      <li>
-        <a id="about" href="${marketing_link('ABOUT')}">${_("About")}</a>
-      </li>
-      %endif
-      %if settings.MKTG_URL_LINK_MAP.get('FAQ'):
-      <li>
-        <a id="faq" href="${marketing_link('FAQ')}">${_("FAQ")}</a>
-      </li>
-      %endif
-      %if settings.MKTG_URL_LINK_MAP.get('CONTACT'):
-      <li>
-        <a id="contact" href="${marketing_link('CONTACT')}">${_("Contact")}</a>
-      </li>
-      %endif
-      %if settings.MKTG_URL_LINK_MAP.get('TOS'):
-      <li>
-        <a href="${marketing_link('TOS')}">${_("Terms of Service")}</a>
-      </li>
-      %endif
-      %if settings.MKTG_URL_LINK_MAP.get('HONOR'):
-      <li>
-        <a href="${marketing_link('HONOR')}">${_("Honor Code")}</a>
-      </li>
-      %endif
-      %if settings.MKTG_URL_LINK_MAP.get('PRIVACY'):
-      <li>
-        <a href="${marketing_link('PRIVACY')}">${_("Privacy Policy")}</a>
-      </li>
-      %endif
-    </ul>
-    <p class="copyright">${_(u"© 2015 {platform_name}.").format(platform_name=platform_name())}</p>
+    <div class="footer-links">
+      <ul class="links-below">
+        <li>
+          <a href="http://www.howest/be">www.howest.be</a>
+        </li>
+        %if settings.MKTG_URL_LINK_MAP.get('ABOUT'):
+        <li>
+          <a id="about" href="${marketing_link('ABOUT')}">${_("Manual")}</a>
+        </li>
+        %endif
+        %if not settings.MKTG_URL_LINK_MAP.get('FAQ'):
+        <li>
+          <a id="faq" href="${marketing_link('FAQ')}">${_("FAQ")}</a>
+        </li>
+        %endif
+        %if settings.MKTG_URL_LINK_MAP.get('CONTACT'):
+        <li>
+          <a id="contact" href="${marketing_link('CONTACT')}">${_("Contact")}</a>
+        </li>
+        %endif
+        %if not settings.MKTG_URL_LINK_MAP.get('HONOR'):
+        <li>
+          <a href="${marketing_link('HONOR')}">${_("Honor Code")}</a>
+        </li>
+        %endif
+      </ul>
+    </div>
+    <div class="footer-logo">
+      <img src="${static.url(branding.get_logo_url())}" alt="${platform_name()}"/>
+    </div>
+    <div class="footer-social">
+      <p><span class="fa fa-facebook"> </span> <a href="http://www.facebook.com/MetisHowest">Facebook</a></p>
+      <p><span class="fa fa-twitter"> </span> <a href="http://www.twitter.com/MetisHowest">Twitter</a></p>
+      <p><span class="fa fa-linkedin"> </span> <a href="http://www.linkedin.com/in/MetisHowest">LinkedIn</a></p>
+      <p><span class="fa fa-reddit"> </span> <a href="http://www.reddit.com/MetisHowest">Reddit</a></p>
+    </div>
+    <div class="footer-copy">
+      <ul class="links">
+        %if settings.MKTG_URL_LINK_MAP.get('TOS'):
+        <li>
+          <a href="${marketing_link('TOS')}">${_("Terms of Service")}</a>
+        </li>
+        %endif
+        <li>
+          ${_(u"© 2015 {platform_name}.").format(platform_name=platform_name())}
+        </li>
+        %if settings.MKTG_URL_LINK_MAP.get('PRIVACY'):
+        <li>
+          <a href="${marketing_link('PRIVACY')}">${_("Privacy Policy")}</a>
+        </li>
+        %endif
+      </ul>
+    </div>
   </div>
 </footer>

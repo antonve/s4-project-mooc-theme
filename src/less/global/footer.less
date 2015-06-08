@@ -11,6 +11,29 @@ footer {
         position: relative;
     }
 
+    ul.links-below {
+        .list-unstyled();
+
+        margin: 0;
+
+        li {
+            display: block;
+            margin: 0 0 5px 0;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            a {
+                color: @color-background;
+
+                &:hover {
+                    color: @color-background;
+                }
+            }
+        }
+    }
+
     ul.links {
         .list-unstyled();
 
@@ -43,7 +66,18 @@ footer {
         }
     }
 
-    .copyright {
-        margin: 0;
+    .footer-copy,
+    .footer-logo {
+        text-align: center;
+    }
+
+    .footer-social, .footer-copy, .footer-links, .footer-logo{
+        .make-xs-column(12);
+        .make-sm-column(6);
+        .make-md-column(6);
+        .make-lg-column(4);
+        .fa{
+            font: normal normal normal 14px/1 FontAwesome;
+        }
     }
 }

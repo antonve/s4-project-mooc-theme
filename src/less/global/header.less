@@ -45,6 +45,22 @@ header.global, header.global-new, header.global.slim {
             }
         }
 
+        h1.nav-big{
+            margin:0;
+            float:left;
+            line-height: 2em;
+            font-size:2em;
+            padding: 0px 0.5em;
+            a{
+                color: lighten(@color-blue, 30%);;
+                font-weight: bold;
+            }
+            &:hover a{
+                text-decoration: none;
+                color: @white
+            }
+        }
+
         h2 {
             .square(auto);
 
