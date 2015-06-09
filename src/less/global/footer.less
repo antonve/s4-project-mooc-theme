@@ -1,4 +1,7 @@
 footer {
+
+  clear: both;
+  padding-top: 0em;
     font-size: 0.9em;
     margin: 0;
     overflow: hidden;
@@ -66,12 +69,46 @@ footer {
         }
     }
 
-    .footer-copy,
-    .footer-logo {
+    .footer-copy, .footer-logo {
         text-align: center;
     }
 
-    .footer-social, .footer-copy, .footer-links, .footer-logo{
+    .footer-social{
+        text-align:right;
+        span{
+            padding-left: 0.5em;
+        }
+
+        .fa-twitter {
+          color: #55acee;
+        }
+        .fa-twitter:hover {
+          color: #6fb9f1;
+        }
+        .fa-facebook {
+          color: #3b5998;
+        }
+        .fa-facebook:hover {
+          color: #4365ad;
+        }
+        .fa-linkedin {
+          color: #0976b4;
+        }
+        .fa-linkedin:hover {
+          color: #0a89d1;
+        }
+        .fa-reddit{
+            color: red;
+        }
+    }
+
+    .footer-copy{
+        .make-lg-column(12)
+    }
+
+
+
+    .footer-social, .footer-links, .footer-logo{
         .make-xs-column(12);
         .make-sm-column(6);
         .make-md-column(6);
