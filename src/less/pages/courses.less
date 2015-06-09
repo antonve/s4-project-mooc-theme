@@ -44,6 +44,7 @@
                   width: 100%;
                   height: 100%;
                   position: absolute;
+                  background: darken(@color-blue, 20%);
                   background-position: center center;
                   background-size: cover;
                   /*-webkit-transition: background-size 0.2s ease-in;
@@ -56,27 +57,28 @@
 
                 .title {
                   position: absolute;
-                  z-index: 2;
-                  top: 0px;
+                  z-index: 4;
+                  top: 20px;
                   margin:10px 0px;
                   padding: 10px;
                   left: 0px;
                   width: 100%;
-                  background-color: white;
-                  color: black;
+                  background-color: @color0;
+                  color: @white;
                   text-transform: uppercase;
                   font-family: Open Sans, sans-serif;
                   font-weight: bold;
-                  font-size: 14px;
+                  font-size: @font-size-base;
                   letter-spacing: 0.5px;
 
                 }
 
-                .semester {
+                .richting {
+                  width: 100%;
                   position: absolute;
                   z-index: 2;
-                  bottom: 30px;
-                  left: 20px;
+                  bottom: 19px;
+                  padding-left: 20px;
                   color: #fff;
                   text-transform: uppercase;
                   font-family: Open Sans, sans-serif;
@@ -84,13 +86,16 @@
                   font-size: 14px;
                   letter-spacing: 0.5px;
                   text-shadow: 0 0 10px #000;
+                  background-color: @color0;
+                  margin: 0;
                 }
 
                 .timing{
+                  width: 100%;
                   position: absolute;
                   z-index: 2;
-                  bottom: 10px;
-                  left: 20px;
+                  bottom: 0px;
+                  padding-left: 20px;
                   color: #fff;
                   text-transform: uppercase;
                   font-family: Open Sans, sans-serif;
@@ -98,12 +103,16 @@
                   font-size: 14px;
                   letter-spacing: 0.5px;
                   text-shadow: 0 0 10px #000;
+                  background-color: @color0;
+                  margin: 0;
                 }
 
                 .hover {
+                  z-index:3;
                   position: absolute;
-                  background: rgba(153, 103, 87, 0.5);
                   background: rgba(255,255,255, 0.5);
+                  background: fadeout(@color0, 20%);
+                  background: @color0;
                   width: 500px;
                   height: 500px;
                   top: 220px;
@@ -115,7 +124,7 @@
                           transition: all 0.2s ease-in;
                 }
 
-                .hover a {
+                .hover span {
                   color: #fff;
                   font-size: 40px;
                   text-decoration: none;
@@ -129,20 +138,15 @@
                           transition: all 0.2s ease-in;
                 }
 
-
-
-
-                &:hover .image {
-                  background-size: cover;
-                  /*-webkit-backface-visibility: hidden;
-                  -webkit-transform: translateZ(0) scale(1, 1);*/
-                }
                 &:hover .hover {
                   top: -135px;
                   left: -80px;
                 }
-                &:hover .hover a {
-                  font-size: 90px;
+                &:hover .title{
+                    font-size: @font-size-h4;
+                }
+                &:hover .hover span {
+                  font-size: (@font-size-h1 * 4);
                   top: 50%;
                   left: 50%;
                   -webkit-transform: rotate(-45deg) translateY(-50%) translateX(-50%);
@@ -151,35 +155,35 @@
                 }
                 &.color1{
                   border-bottom: 5px solid @color1;
-                  .title{
+                  .title, .richting, .timing, .hover{
                     background-color: @color1;
                     color: white;
                   }
                 }
                 &.color2{
                   border-bottom: 5px solid @color2;
-                  .title{
+                  .title, .richting, .timing, .hover{
                     background-color: @color2;
                     color: white;
                   }
                 }
                 &.color3{
                   border-bottom: 5px solid @color3;
-                  .title{
+                  .title, .richting, .timing, .hover{
                     background-color: @color3;
                     color: white;
                   }
                 }
                 &.color4{
                   border-bottom: 5px solid @color4;
-                  .title{
+                  .title, .richting, .timing, .hover{
                     background-color: @color4;
                     color: white;
                   }
                 }
                 &.color5{
                   border-bottom: 5px solid @color5;
-                  .title{
+                  .title, .richting, .timing, .hover{
                     background-color: @color5;
                     color: white;
                   }
