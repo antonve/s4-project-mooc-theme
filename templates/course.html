@@ -8,7 +8,7 @@ from courseware.courses import course_image_url, get_course_about_section
 <div class="courseBlock color${get_course_about_section(course, 'university')[0:1]}" id="${course.id | h}" aria-label="${get_course_about_section(course, 'title')}">
   <div class="image" style="background-image: url(${course_image_url(course)})"></div>
   <p class="title">${get_course_about_section(course, 'title')}</p>
-  <p class="semester">${get_course_about_section(course, 'university')[2:]}</p>
+  <p class="semester">${get_course_about_section(course, 'number')}</p>
   <p class="timing">${_("Starts")}: <time itemprop="startDate" datetime="${course.start_datetime_text()}">${course.start_datetime_text()}</p>
   <div class="hover"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="fa fa-arrow-circle-right"></a></div>
   <div class="sr">
@@ -22,6 +22,7 @@ from courseware.courses import course_image_url, get_course_about_section
 
 <!--
 ${get_course_about_section(course, 'university')[0:1]}
+        <p class="semester">${get_course_about_section(course, 'university')[2:]}</p>
         <span class="course-organization">${get_course_about_section(course, 'university')}</span>
         <span class="course-code">${course.display_number_with_default}</span>
         <span class="course-title">${get_course_about_section(course, 'title')}</span>
