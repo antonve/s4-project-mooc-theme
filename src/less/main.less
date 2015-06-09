@@ -9,3 +9,72 @@
 
 @import 'global/main.less';
 @import 'pages/main.less';
+
+
+
+
+.contact{
+	.campus{	
+		.make-md-column(12);
+		.make-lg-column(12);
+	}
+
+	.campus-contactgegevens{
+		.make-md-column(6);
+		.make-lg-column(6);
+		min-height: 250px;
+		background-color: darker(@color-blue, 20%);
+	    padding: 1em;
+	    img{
+	    	width: 80%;
+	    	margin:  1% 10%;
+	    }
+	}
+}
+
+
+
+.about{
+	h1{
+		margin: 0px !important;
+		padding: 2em 0px 0.5em 0px !important;
+	}
+	.about-how{
+		position: relative;
+		display: inline-block;
+		article{
+			.make-md-column(6);
+			.make-lg-column(3);
+			p{
+				padding: 0.5em;
+			}
+			span{
+				position: absolute;
+				right:0;
+				top: 50%;
+				font-size: (@font-size-h1 * 2.5);
+				color: fadeout(@color-yellow, 25%);
+
+				-webkit-transform: translateY(-50%);
+				    -ms-transform: translateY(-50%);
+				        transform: translateY(-50%);
+				&:hover{
+					color:@color-yellow;
+
+				}
+			}
+		}
+	}
+	.about-why{
+		position: relative;
+		display: inline-block;
+		article{
+			.make-md-column(6);
+			.make-lg-column(3);
+
+		}
+	}
+}
+
+
+
