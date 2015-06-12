@@ -71,31 +71,32 @@
     <article>
       <div class="color1">
         <h2>Web &amp; Design</h2>
-        <p>L2WEB.</p>
+        <p>Je leert interactief, multimediaal en grafisch communiceren met een gebruiker. Hoe bouw je een interface logisch op? Hoe ontwerp je een innovatief design in functie van een doelgroep?</p>
       </div>
     </article>
     <article>
       <div class="color2">
-        <h2>Web &amp; Design</h2>
-        <p>L2WEB.</p>
-      </div>
-    </article>
-    <article>
-      <div class="color3">
-        <h2>Web &amp; Design</h2>
-        <p>L2WEB.</p>
+        <h2>Infra</h2>
+        <p>Netwerken en besturingssystemen leer je zowel lokaal als virtueel gebruiken. Door te innoveren kies je de correct gedimensioneerde en energiezuinige hardware.
+        </p>
       </div>
     </article>
     <article>
       <div class="color4">
-        <h2>Web &amp; Design</h2>
-        <p>L2WEB.</p>
+        <h2>Server Side Development</h2>
+        <p>Je leert een goede database maken en beheren. Je laat de klant zijn website onderhouden met een content management systeem. Met serverscripting ontwikkel je eigen innovatieve plugins. </p>
       </div>
     </article>
     <article>
       <div class="color5">
-        <h2>Web &amp; Design</h2>
-        <p>L2WEB.</p>
+        <h2>DES</h2>
+        <p>Dit is de ruggegraat van elke toekomstige NMCT’er. Je leert kritisch denken, je plant je project en voert het uit. Deadlines naleven, problemen analyseren, maar ook je project of idee kunnen presenteren zijn belangrijk. </p>
+      </div>
+    </article>
+    <article>
+      <div class="color3">
+        <h2>App</h2>
+        <p>Objectgeorienteerd programmeren leer je stap voor stap. Je gebruikt je programmeerskills als tool om toepassingen en apps te ontwikkelen. Dit kunnen desktopapplicaties of mobile apps zijn of zelfs apps die op je TV werken.</p>
       </div>
     </article>
   </section>
@@ -118,7 +119,43 @@
          if(getParameterByName('next')) {
               $('#login').trigger("click");
          }
+          equalheight('.categories-container article');
       })
+
+      $(window).resize(function(){
+        equalheight('.categories-container article');
+      });
+
+      equalheight = function(container){
+
+        var currentTallest = 0,
+             currentRowStart = 0,
+             rowDivs = new Array(),
+             $el,
+             topPosition = 0;
+         $(container).each(function() {
+
+           $el = $(this);
+           $($el).height('auto')
+           topPostion = $el.position().top;
+
+           if (currentRowStart != topPostion) {
+             for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+               rowDivs[currentDiv].height(currentTallest);
+             }
+             rowDivs.length = 0; // empty the array
+             currentRowStart = topPostion;
+             currentTallest = $el.height();
+             rowDivs.push($el);
+           } else {
+             rowDivs.push($el);
+             currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+          }
+           for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+             rowDivs[currentDiv].height(currentTallest);
+           }
+         });
+        }
    </script>
 </%block>
 

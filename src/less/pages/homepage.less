@@ -8,7 +8,7 @@
         box-shadow: none;
         border: none;
         background-color: #c8bbaa;
-        background-image: url('../images/header-image-howest.jpg');
+        background-image: url('../images/howest_banner.png');
         background-repeat: no-repeat;
         background-position: 0% 40%;
         background-size: 50%;
@@ -67,7 +67,7 @@
                         font-size: (@font-size-h1 * 1.4);
                         line-height: (@font-size-h1 * 2);
                         height: (@font-size-h1 * 3);
-                        padding-right: (@font-size-h1 * 3);
+                        padding: 10px (@font-size-h1 * 3) 0 10px;
                     }
                     input:focus {
                         border-color: darken(@color-pink, 10%);
@@ -109,6 +109,13 @@
                     margin: auto;
                     border: 1px solid @color-border;
                     border-radius: @default-border-radius;
+                    background-image: url('../images/howest_banner.png');
+                    -moz-transform: scaleX(-1);
+                    -o-transform: scaleX(-1);
+                    -webkit-transform: scaleX(-1);
+                    transform: scaleX(-1);
+                    filter: FlipH;
+                    -ms-filter: "FlipH";
 
                     @media (max-width: @screen-sm-max) {
                         margin: 15px 0 0 0;
@@ -129,9 +136,9 @@
         margin-right: -15px;
 
         .courses-listing-item {
-            .make-xs-column(12);
-            .make-sm-column(6);
-            .make-md-column(6);
+            .make-xs-column(6);
+            .make-sm-column(4);
+            .make-md-column(3);
             .make-lg-column(3);
 
             margin: 0;
@@ -251,9 +258,6 @@
                   top: -135px;
                   left: -80px;
                 }
-                &:hover .title{
-                    font-size: @font-size-h4;
-                }
                 &:hover .hover span {
                   font-size: (@font-size-h1 * 4);
                   top: 50%;
@@ -297,6 +301,16 @@
                     color: white;
                   }
                 }
+                @media (max-width: @screen-sm-max) {
+                    .hover{
+                      /*left:-50%;
+                      top:-50%;
+                      width: 200%;
+                      height: 200%;*/
+                      display:none;
+                    }
+                }
+
             }
         }
     }
@@ -305,40 +319,71 @@
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
-      padding: 18px 10px 0 10px;
 
       article{
-        .make-lg-column(2.4);
+        opacity: 0.8;
+        .make-xs-column(12);
+        .make-sm-column(6);
         .make-md-column(2.4);
-        .make-sm-column(2.4);
-        .make-xs-column(2.4);
+        .make-lg-column(2.4); 
+        
+        &:hover{
+        opacity: 1;
+        }
         div{
-          padding: 5px;
+        height:100%;
         }
 
         h2{
           font-size: @font-size-h2;
+          width: 100%;
+          background-color:white;
+          padding: 5px;
+          height: (@font-size-h2 * 3);
+          text-align:center;
         }
         p{
           font-size: @font-size-h4;
+          padding: 10px;
         }
       }
 
       .color1{
         background-color: @color1;
+        h2{
+          opacity: 1 !important;
+          border-top: solid 4px @color1;
+        }
       }
       .color2{
         background-color: @color2;
+        h2{
+          opacity: 1;
+          border-top: solid 4px @color2;
+        }
       }
       .color3{
         background-color: @color3;
+        h2{
+          opacity: 1;
+          border-top: solid 4px @color3;
+        }
       }
       .color4{
         background-color: @color4;
+        h2{
+          opacity: 1;
+          border-top: solid 4px @color4;
+        }
       }
       .color5{
         background-color: @color5;
+        h2{
+          opacity: 1;
+          border-top: solid 4px @color5;
+        }
       }
+
     }
 
 }
