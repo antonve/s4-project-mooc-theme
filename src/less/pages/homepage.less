@@ -2,6 +2,10 @@
     margin: 0;
     background: none;
 
+    .static-container{
+      background-color:white;
+    }
+
     > header {
         .square(auto);
 
@@ -11,12 +15,15 @@
         background-image: url('../images/howest_banner.png');
         background-repeat: no-repeat;
         background-position: left bottom;
-        background-size: 50%;
+        background-size: contain;
         margin: 0;
-        padding: 150px 0 40px;
+        padding: 10px 0 40px;
 
         .outer-wrapper {
             .ionisx-container();
+            @media (min-width: 1200px){
+              width: 1170px;
+            }
 
             border-radius: @default-border-radius;
             padding-bottom: 15px;
@@ -322,66 +329,72 @@
       margin-right: auto;
 
       article{
-        opacity: 0.8;
         .make-xs-column(12);
         .make-sm-column(6);
         .make-md-column(2.4);
         .make-lg-column(2.4); 
         
-        &:hover{
-        opacity: 1;
-        }
         div{
-        height:100%;
+          height:100%;
         }
 
         h2{
+          opacity: 1;
           font-size: @font-size-h2;
           width: 100%;
           background-color:white;
           padding: 5px;
-          height: (@font-size-h2 * 3);
+          line-height: (@font-size-h2 * 3);
           text-align:center;
         }
         p{
           font-size: @font-size-h4;
           padding: 10px;
+          opacity: 0.8;
+        }
+        &:hover p{
+          opacity: 1;
         }
       }
 
       .color1{
-        background-color: @color1;
+        background-color: lighten(@color1, 20%);
         h2{
+          background-color: @color1;
           opacity: 1 !important;
-          border-top: solid 4px @color1;
+          border-top: solid 4px lighten(@color1, 20%);
         }
       }
       .color2{
-        background-color: @color2;
+        background-color: lighten(@color2, 20%);
         h2{
+          background-color: @color2;
           opacity: 1;
-          border-top: solid 4px @color2;
+          border-top: solid 4px lighten(@color2, 20%);
         }
       }
       .color3{
-        background-color: @color3;
+        background-color: lighten(@color3, 20%);
         h2{
+          background-color: @color3;
           opacity: 1;
-          border-top: solid 4px @color3;
+          border-top: solid 4px lighten(@color3, 20%);
         }
       }
       .color4{
-        background-color: @color4;
+        background-color: lighten(@color4, 20%);
         h2{
+          background-color: @color4;
           opacity: 1;
-          border-top: solid 4px @color4;
+          border-top: solid 4px lighten(@color4, 20%);
         }
       }
       .color5{
-        background-color: @color5;
+        background-color: lighten(@color5, 20%);
         h2{
+          background-color: @color5;
           opacity: 1;
-          border-top: solid 4px @color5;
+          border-top: solid 4px lighten(@color5, 20%);
         }
       }
 
