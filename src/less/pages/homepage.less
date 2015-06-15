@@ -10,7 +10,7 @@
         background-color: #c8bbaa;
         background-image: url('../images/howest_banner.png');
         background-repeat: no-repeat;
-        background-position: 0% 40%;
+        background-position: left bottom;
         background-size: 50%;
         margin: 0;
         padding: 150px 0 40px;
@@ -62,7 +62,8 @@
                     }
                 }
                 .course-search{
-                    bottom: 0;
+                    padding-bottom: 100px;
+                    bottom:0px;
                     .search-input{
                         font-size: (@font-size-h1 * 1.4);
                         line-height: (@font-size-h1 * 2);
@@ -117,8 +118,8 @@
                     filter: FlipH;
                     -ms-filter: "FlipH";
 
-                    @media (max-width: @screen-sm-max) {
-                        margin: 15px 0 0 0;
+                    @media (max-width: @screen-md-max) {
+                        display:none;
                     }
                 }
             }
