@@ -12,16 +12,6 @@
 
 
 
-/*
-
-#!/bin/bash
-sudo rm /edx/var/mongo/mongodb/mongod.lock
-sudo mongod -repair --config /etc/mongod.conf
-sudo chown -R mongodb:mongodb /edx/var/mongo/mongodb/.
-sudo service mongodb restart
-
-*/
-
 
 .contact{
 	.campus{	
@@ -63,14 +53,13 @@ sudo service mongodb restart
 				right:0;
 				top: 50%;
 				font-size: (@font-size-h1 * 2.5);
-				color: fadeout(@color-yellow, 25%);
+				color:@color-pink;
 
 				-webkit-transform: translateY(-50%);
 				    -ms-transform: translateY(-50%);
 				        transform: translateY(-50%);
 				&:hover{
-					color:@color-yellow;
-
+					color: darken(@color-pink, 15%);
 				}
 			}
 		}
@@ -83,8 +72,40 @@ sudo service mongodb restart
 			.make-lg-column(3);
 
 		}
+		.manual-icon{
+			color: @color-pink;
+			width: 100%;
+			height: 100px;
+			text-align: center;
+			span{
+				font-size: 80px;
+				&:hover{
+					color: darken(@color-pink, 15%);
+				}
+			}
+		}
+
 	}
 }
+
+
+
+.dashboard-search-bar {
+    margin-top: 76px;
+}
+
+.dashboard .profile-sidebar
+{
+    border-radius: 0;
+    border: 1px solid #ddd;
+}
+
+.dashboard .my-courses .wrapper-header-courses .header-courses
+{
+    font-size: 2em;
+    margin-top: 20px;
+}
+
 
 
 

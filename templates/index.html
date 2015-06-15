@@ -43,63 +43,66 @@
       % endif
     </div>
   </header>
-  <section class="courses-container">
-    <section class="highlighted-courses">
+  <section class="static-container">
+    <section class="courses-container">
+      <section class="highlighted-courses">
 
-      % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-        <section class="courses">
-            <ul class="courses-listing">
-            ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
-            %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
-              <li class="courses-listing-item">
-                <%include file="course.html" args="course=course" />
-              </li>
-            %endfor
-            </ul>
-        </section>
-        ## in case there are courses that are not shown on the homepage, a 'View all Courses' link should appear
-        % if settings.HOMEPAGE_COURSE_MAX and len(courses) > settings.HOMEPAGE_COURSE_MAX:
-          <div class="courses-more">
-            <a class="courses-more-cta" href="${marketing_link('COURSES')}" > ${_("View all Courses")} </a>
-          </div>
+        % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+          <section class="courses">
+              <ul class="courses-listing">
+              ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+              %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+                <li class="courses-listing-item">
+                  <%include file="course.html" args="course=course" />
+                </li>
+              %endfor
+              </ul>
+          </section>
+          ## in case there are courses that are not shown on the homepage, a 'View all Courses' link should appear
+          % if settings.HOMEPAGE_COURSE_MAX and len(courses) > settings.HOMEPAGE_COURSE_MAX:
+            <div class="courses-more">
+              <a class="courses-more-cta" href="${marketing_link('COURSES')}" > ${_("View all Courses")} </a>
+            </div>
+          % endif
         % endif
-      % endif
 
+      </section>
+    </section>
+    <section class="categories-container">
+      <article>
+        <div class="color1">
+          <h2>Web &amp; Design</h2>
+          <p>Je leert interactief, multimediaal en grafisch communiceren met een gebruiker. Hoe bouw je een interface logisch op? Hoe ontwerp je een innovatief design in functie van een doelgroep?</p>
+        </div>
+      </article>
+      <article>
+        <div class="color2">
+          <h2>Infrastructure</h2>
+          <p>Netwerken en besturingssystemen leer je zowel lokaal als virtueel gebruiken. Door te innoveren kies je de correct gedimensioneerde en energiezuinige hardware.
+          </p>
+        </div>
+      </article>
+      <article>
+        <div class="color4">
+          <h2>Server Side</h2>
+          <p>Je leert een goede database maken en beheren. Je laat de klant zijn website onderhouden met een content management systeem. Met serverscripting ontwikkel je eigen innovatieve plugins. </p>
+        </div>
+      </article>
+      <article>
+        <div class="color5">
+          <h2>Digital Expert</h2>
+          <p>Dit is de ruggegraat van elke toekomstige NMCT’er. Je leert kritisch denken, je plant je project en voert het uit. Deadlines naleven, problemen analyseren, maar ook je project of idee kunnen presenteren zijn belangrijk. </p>
+        </div>
+      </article>
+      <article>
+        <div class="color3">
+          <h2>App development</h2>
+          <p>Objectgeorienteerd programmeren leer je stap voor stap. Je gebruikt je programmeerskills als tool om toepassingen en apps te ontwikkelen. Dit kunnen desktopapplicaties of mobile apps zijn of zelfs apps die op je TV werken.</p>
+        </div>
+      </article>
     </section>
   </section>
-  <section class="categories-container">
-    <article>
-      <div class="color1">
-        <h2>Web &amp; Design</h2>
-        <p>Je leert interactief, multimediaal en grafisch communiceren met een gebruiker. Hoe bouw je een interface logisch op? Hoe ontwerp je een innovatief design in functie van een doelgroep?</p>
-      </div>
-    </article>
-    <article>
-      <div class="color2">
-        <h2>Infra</h2>
-        <p>Netwerken en besturingssystemen leer je zowel lokaal als virtueel gebruiken. Door te innoveren kies je de correct gedimensioneerde en energiezuinige hardware.
-        </p>
-      </div>
-    </article>
-    <article>
-      <div class="color4">
-        <h2>Server Side Development</h2>
-        <p>Je leert een goede database maken en beheren. Je laat de klant zijn website onderhouden met een content management systeem. Met serverscripting ontwikkel je eigen innovatieve plugins. </p>
-      </div>
-    </article>
-    <article>
-      <div class="color5">
-        <h2>DES</h2>
-        <p>Dit is de ruggegraat van elke toekomstige NMCT’er. Je leert kritisch denken, je plant je project en voert het uit. Deadlines naleven, problemen analyseren, maar ook je project of idee kunnen presenteren zijn belangrijk. </p>
-      </div>
-    </article>
-    <article>
-      <div class="color3">
-        <h2>App</h2>
-        <p>Objectgeorienteerd programmeren leer je stap voor stap. Je gebruikt je programmeerskills als tool om toepassingen en apps te ontwikkelen. Dit kunnen desktopapplicaties of mobile apps zijn of zelfs apps die op je TV werken.</p>
-      </div>
-    </article>
-  </section>
+  
 </section>
 
 <section id="video-modal" class="modal home-page-video-modal video-modal">
