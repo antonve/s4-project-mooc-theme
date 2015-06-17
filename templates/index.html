@@ -21,7 +21,6 @@
   <header>
     <div class="outer-wrapper">
       <div class="title">
-        % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
           <div class="course-search">
             <form method="get" action="/courses">
               <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
@@ -30,7 +29,6 @@
               </button>
             </form>
           </div>
-        % endif
 
       </div>
 

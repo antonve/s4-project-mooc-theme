@@ -30,30 +30,69 @@
 
     logo_alt_text = _("{platform_name} Logo").format(platform_name=platform_name)
 %>
+<div class="static-container filter-menu">
+  <div class="sortby">
+    Sort by <a href="" id="sortbymajor">major</a> / <a href="" id="sortbyalpha">alphabetical</a>
+  </div>
+  <div class="searchbox">
+    <form method="get" action="/courses">
+      <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+      <button class="search-button" type="submit">
+        <i class="icon fa fa-search" aria-hidden="true"></i>
+      </button>
+    </form>
+  </div>
+</div>
+<script>
+$('#sortbyalpha').click(function(ev) {
+  ev.preventDefault();
 
-<section class="find-courses">
+  var mylist = $('#course-list-filter');
+  var listitems = mylist.children('li').get();
+  
+  listitems.sort(function(a, b) {
+     return $(a).find('.title').text().toUpperCase().localeCompare($(b).find('.title').text().toUpperCase());
+  })
+  
+  $.each(listitems, function(idx, itm) { mylist.append(itm); });
+});
+$('#sortbymajor').click(function(ev) {
+  ev.preventDefault();
 
-  <header class="search">
-    <div class="inner-wrapper main-search">
-      <hgroup>
-        <div class="logo">
-          <img src="${logo_file}" alt="${logo_alt_text}" />
-        </div>
-        <h2>${course_index_overlay_text}</h2>
-      </hgroup>
-    </div>
-  </header>
+  var mylist = $('#course-list-filter');
+  var listitems = mylist.children('li').get();
+  
+  listitems.sort(function(a, b) {
+     return $(a).find('.richting').text().toUpperCase().localeCompare($(b).find('.richting').text().toUpperCase());
+  })
+  
+  $.each(listitems, function(idx, itm) { mylist.append(itm); });
+});
+</script>
 
-  <section class="courses-container">
-    <section class="courses">
-      <ul class="courses-listing">
-	%for course in courses:
-        <li class="courses-listing-item">
-          <%include file="../course.html" args="course=course" />
-        </li>
-        %endfor
-      </ul>
+  <section class="find-courses">
+
+    <header class="search">
+      <div class="inner-wrapper main-search">
+        <hgroup>
+          <div class="logo">
+            <img src="${logo_file}" alt="${logo_alt_text}" />
+          </div>
+          <h2>${course_index_overlay_text}</h2>
+        </hgroup>
+      </div>
+    </header>
+
+    <section class="courses-container">
+      <section class="courses">
+        <ul id="course-list-filter" class="courses-listing">
+    %for course in courses:
+          <li class="courses-listing-item">
+            <%include file="../course.html" args="course=course" />
+          </li>
+          %endfor
+        </ul>
+      </section>
     </section>
-  </section>
 
-</section>
+  </section>
