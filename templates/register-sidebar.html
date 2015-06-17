@@ -10,19 +10,6 @@ from django.core.urlresolvers import reverse
   <h3 class="sr">${_("Registration Help")}</h3>
 </header>
 
-% if has_extauth_info is UNDEFINED:
-
-<div class="cta cta-login">
-  <h3 class="title">${_("Already registered?")}</h3>
-  <p class="instructions">
-    <a class="cta-login-action" href="${reverse('signin_user')}${login_query()}">
-      ${_("Log in")}
-    </a>
-  </p>
-</div>
-
-% endif
-
 ## TODO: Use a %block tag or something to allow themes to
 ##       override in a more generalizable fashion.
 % if not stanford_theme_enabled():

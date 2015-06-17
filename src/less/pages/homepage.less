@@ -19,7 +19,10 @@
         margin: 0;
         padding: 10px 0 40px;
         margin: 0 auto;
-        width: 1170px;
+        width: 100%;
+        @media (min-width: 1200px){
+          width: 1170px;
+        }
 
         .outer-wrapper {
             .ionisx-container();
@@ -331,7 +334,6 @@
       margin-right: auto;
 
       article{
-      cursor:pointer;
         .make-xs-column(12);
         .make-sm-column(6);
         .make-md-column(2.4);
